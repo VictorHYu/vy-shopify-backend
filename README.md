@@ -2,10 +2,11 @@
 
 Made with Rails 5.1.3 and Ruby 2.4.0
 
-* Heroku
+## Heroku
 View on Heroku at https://vy-shopify-backend.herokuapp.com
 
-* Deployment instructions
+## Deployment instructions
 Run 'rails server' in the application folder
-Site will be run on localhost:3000
+
+Site will be run at localhost:3000
 
