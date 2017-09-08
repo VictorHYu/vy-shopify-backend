@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
     # loop through pages
     for page_counter in 1..total_pages
       data_hash['customers'].each do |customer|
-        # tracks which requirements are invalid
+        # array that tracks which requirements are invalid
         error_info = Array.new
         
         # loop through the required validations
@@ -28,7 +28,7 @@ class CustomersController < ApplicationController
             
             # ASSUMPTIONS
             # - 'required' is always invalid when value is nil or missing from hash
-            # - 'type' is always valid when value is nil and not required
+            # - 'type' is always valid when value is nil
             # - 'length' is never valid when value is nil
             
             # check if field is required
@@ -69,7 +69,7 @@ class CustomersController < ApplicationController
       end
       
       # get customers from next page
-      # (assume validation is the same across all pages)
+      # (assume validation parameters are the same across all pages)
       uri = URI.parse('https://backend-challenge-winter-2017.herokuapp.com/customers.json?page=' + (page_counter + 1).to_s)
       req = Net::HTTP.get(uri)
       data_hash = JSON.parse(req)
