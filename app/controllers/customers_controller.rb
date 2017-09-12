@@ -77,9 +77,8 @@ class CustomersController < ApplicationController
     
     @text =
     '{' +
-      '"invalid_customers": [' +
+      '"invalid_customers":' +
         invalid_customers.to_json +
-      ']' +
     '}';
   end
 end
